@@ -1,34 +1,18 @@
 import { VStack, Image, Text, Box, FormControl, Input, Button, Link } from 'native-base'
 import { TouchableOpacity } from 'react-native';
-import Logo from './assets/Logo.png'
+import { Titulo } from './components/Titulo';
+import { Botao } from './components/Botao';
+import { EntradaTexto } from './components/EntradaTexto';
 
 export default function Login() {
   return (
     <VStack flex={1} justifyContent="center" alignItems="center" p={5}>
       <Image source={require('./assets/Logo.png')} alt="Logo Voll" />
       
-      <Text
-        fontSize="2xl"
-        fontWeight="bold"
-        color="gray.500"
-        textAlign="center"
-        mt={5}
-      >
-        Faça login em sua conta
-      </Text>
+      <Titulo>Faça login em sua conta</Titulo>
 
       <Box>
-        <FormControl mt={3}>
-          <FormControl.Label>Email</FormControl.Label>
-          <Input 
-            placeholder="Insira seu endereço de email"
-            size="lg"
-            w="100%"
-            borderRadius='lg'
-            bgColor='gray.100'
-            shadow={3}  
-          />
-        </FormControl>
+        <EntradaTexto label="Email" placeholder="Insira seu endereço de email"/>
 
         <FormControl mt={3}>
           <FormControl.Label>Senha</FormControl.Label>
@@ -43,14 +27,7 @@ export default function Login() {
         </FormControl>
       </Box>
 
-      <Button
-        w="100%"
-        bgColor="blue.800"
-        mt={10}
-        borderRadius="lg"
-      >
-        Entrar
-      </Button>
+      <Botao>Entrar</Botao>
 
       <Link
         href="https://alura.com.br"
